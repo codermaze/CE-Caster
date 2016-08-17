@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+
+        <title>CE-Caster</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- jQuery -->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.js"></script>
+
+        <!--  Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
+
+
+        <link rel="stylesheet" href="video-player.css">
+        <script type="text/javascript" src="video-player.js"></script>
+    </head>
+
+
+
+    <body>
+        <br>
+
+        <div class="container jumbotron"><!-- Video Container Start -->
+            <div class="">
+                
+
+                <div class="row">
+
+                    <div class="col-md-8">
+                        <video  width="100%" id="videoPlayer" style="border: 1px solid grey" preload="auto">
+                            <source src='insync video 1 retirement goal.mp4' type=video/mp4>
+                            Your browser does not support this video.
+                        </video>
+                        <div class="videoControls">
+
+                                    <a href="#" class="btnPlay"><span class="glyphicon glyphicon-play"></span></a>
+                                    <a href="#" class="btnMute"><span class="glyphicon glyphicon-volume-up"></span></a>
+                          
+                                
+                            
+                                    <div class="progressBar">
+                                <div class="timeBar"></div>
+                                </div>
+                              
+                                
+                                
+                               
+                                   <a href="#" class="btnFullscreen"><span class="glyphicon glyphicon-fullscreen"></span></a>
+                                   
+                                <div class="videoTime">
+                                <span class="current">0:00</span> / <span class="duration"></span>
+                                <img src="logo.png">
+                                </div>
+                                   
+                                
+                                </div>
+
+                    </div>
+
+                    <div class="col-md-4 lightBlueBg">
+                        <h4><em>Webcast</em> - Video Series</h4>
+                        
+                        <br>
+                        <h5>Retirement Income Goals</h5>
+                        <h6>Learn why the Retirement income goal may be the most important input in the program.</h6>
+                        <br>
+                        <div class="">
+                            Download Documents
+                            <h5>Featured Fund: <a href="#">Invesco Featured Fund.pdf</a></h5>
+                        </div>
+                        <br>
+                        <div class="">
+                            Other Downloads
+                            <h5>Script: <a href="#">Subtitles.pdf</a></h5>
+                            <h5>Slides: <a href="#">Presentation.pdf</a></h5>
+                        </div> 
+                    </div> 
+                </div>
+            </div><!-- Video Container End -->
+            
+            <br>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="row coolGreyBG">
+                            area 1
+                        </div>
+                        <div class="row lightBlue">
+                            ares 2
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-4">
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+            
+            
+            
+            
+            
+            <br>
+            
+            
+            <!-- Below the video content-->
+            <br>
+            
+        </div><!-- video container end -->
+    
+        <div class="container">
+        <div class="row">
+
+                <div class="col-md-4">
+                    <p>Stats:</p>
+                    <table class="table table-striped">
+                        <tr>
+                            <td>Total viewing time: <span class="total">0</span> seconds</td>
+                            
+                        </tr>
+                        <tr>
+                            <td>Required Completion: <span class="requireCompleted"></span> seconds</td>
+                            
+                        </tr>
+                        <tr>
+                            <td>Percent Needed: <span class="percentViewedNeeded"></span> %</td>
+                            
+                        </tr>
+                        <tr>
+                            <td>Completed: <span class="completed"></span></td>
+                            
+                        </tr>
+                        <tr>
+                            <td>Percent Complete: <span class="percentCompleted"></span> %</td>
+                            
+                        </tr>
+                    </table>
+                   
+                  
+                    
+                     
+                </div>
+                <div class="col-md-6">
+                    <p>TimeRanges: <span class="viewed"></span></p>
+                    <div class="progressBar">
+                        <div class="timeBar"></div>
+                    </div>
+                    
+                </div>
+            </div>
+      </div>  
+         
+    </body>
+
+</html>
