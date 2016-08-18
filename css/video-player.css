@@ -10,10 +10,7 @@ and open the template in the editor.
 
     /* CSS specific to the player controls */
 
-    .jumbotron {
-        padding: 15px;
-        margin-bottom: 10px;
-    }
+
     .videoControls {
         width: 100%;
         font-size: 15px;
@@ -65,20 +62,4 @@ and open the template in the editor.
     background-color: #ccc;
   
    
-}
-
-/* CSS for the page itself */
-
-.lightBlueBg {
-    background-color: #009BFA;
-    padding: 10px;
-}
-
-.coolGreyBg {
-    background-color: #DFDFDF;
-}
-
-.whiteBg {
-    background-color: #ffffff;
-    padding: 10px;
 }

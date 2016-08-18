@@ -78,30 +78,57 @@ $(document).ready(function () {
             return s;
         }
     
+        
+    
+    // Enable quiz button
+$('#btnQuiz').click(function() {
+             $('#quiz').show();
+         });     
+        
+  
+    
     
     // Update the video stats and completed calculations
     videoPlayer.on('timeupdate', function () {
         
-        var percentViewedNeeded = 0.5;
+        var percentViewedNeeded = 0.03;
         var currentCompleted = Math.round(printTotalTime(videoPlayer[0].played));
         var requireCompleted = Math.round(videoPlayer[0].duration * percentViewedNeeded);
         var percentCompleted = Math.round((currentCompleted / requireCompleted) * 100);
             
         function checkCompleted(tr) {
-            if (currentCompleted > requireCompleted) {
+            if (currentCompleted >= requireCompleted) {
+                $('#btnQuiz').prop('disabled', false);
+              
+               
                 return true;
             }
             else {
                 return false;
             }
         }
+        
+        function rangeStart() {
+            start = printTimeRanges(videoPlayer[0].played);
+            seek = start[7] + start[8]+start[9]+start[10];
+           
+            return seek;
+        }
+        
+        
         $('.viewed').text(printTimeRanges(videoPlayer[0].played));
         $('.total').text(Math.round(printTotalTime(videoPlayer[0].played)));
         $('.completed').text(checkCompleted(videoPlayer[0]));
         $('.percentViewedNeeded').text(percentViewedNeeded * 100)
         $('.requireCompleted').text(requireCompleted + " / " + Math.round(videoPlayer[0].duration));
         $('.percentCompleted').text(percentCompleted);
+        $('.startpoint').text(rangeStart());
     });
+
+    
+
+
+
 
 
 //update HTML5 video current play time in the controls area
@@ -150,5 +177,7 @@ $(document).ready(function () {
         videoPlayer[0].currentTime = maxduration * percentage / 100;
     };
 
+    
+    
 
 });

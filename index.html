@@ -19,24 +19,23 @@ and open the template in the editor.
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
 
 
-        <link rel="stylesheet" href="video-player.css">
-        <script type="text/javascript" src="video-player.js"></script>
+        <link rel="stylesheet" href="css/video-player.css">
+        <link rel="stylesheet" href="css/custom.css">
+        <script type="text/javascript" src="js/video-player.js"></script>
     </head>
 
 
 
-    <body>
+    <body class="purpleBg">
         <br>
 
-        <div class="container jumbotron"><!-- Video Container Start -->
-            <div class="">
-                
-
-                <div class="row">
+        <div class="container"><!-- Video Container Start -->
+        
+                <div class="row whiteBg">
 
                     <div class="col-md-8">
                         <video  width="100%" id="videoPlayer" style="border: 1px solid grey" preload="auto">
-                            <source src='insync video 1 retirement goal.mp4' type=video/mp4>
+                            <source src='content/insync video 1 retirement goal.mp4' type=video/mp4>
                             Your browser does not support this video.
                         </video>
                         <div class="videoControls">
@@ -65,37 +64,58 @@ and open the template in the editor.
 
                     </div>
 
-                    <div class="col-md-4 lightBlueBg">
+                    <div class="col-md-4">
+                        <div class="whiteBg">
                         <h4><em>Webcast</em> - Video Series</h4>
+                        <h6>Presented by: The Host</h6>
+                        <br>
+                        <h5>Video description title</h5>
+                        <h6>Description of video here, along with details about the product being discussed and the presenters.</h6>                    
+                        </div>                     
+                    </div> 
+                    <div class="col-md-4">
+                        <div class="whiteBg">
                         
-                        <br>
-                        <h5>Retirement Income Goals</h5>
-                        <h6>Learn why the Retirement income goal may be the most important input in the program.</h6>
-                        <br>
                         <div class="">
                             Download Documents
-                            <h5>Featured Fund: <a href="#">Invesco Featured Fund.pdf</a></h5>
-                        </div>
-                        <br>
-                        <div class="">
-                            Other Downloads
+                            <h5>Featured Document: <a href="#">Featured Doc.pdf</a></h5>
                             <h5>Script: <a href="#">Subtitles.pdf</a></h5>
                             <h5>Slides: <a href="#">Presentation.pdf</a></h5>
-                        </div> 
-                    </div> 
+                        </div>
+                        </div>
+                    </div>            
+                   <div class="col-md-4">
+                        <div class="coolGreyBg">
+                            
+                            <table class="table">
+                                <tr>
+                                    <td>Percent Viewed: <span class="percentCompleted"></span> %</td>
+                                    <td> </td>
+                                    <td><button id="btnQuiz" class="btn btn-primary" disabled>Take the quiz</button></td>
+
+                                </tr>
+                            </table>
+                            <h6>Quiz will become active when entire video has been viewed.</h6>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    
                 </div>
-            </div><!-- Video Container End -->
-            
-            <br>
-            <div class="container">
-                <div class="row">
+           
+   
+            <!-- Below the video content-->
+           
+        </div><!-- video container end -->
+        
+        
+    <div class="container">
+                <div class="row  whiteBg">
                     <div class="col-md-8">
-                        <div class="row coolGreyBG">
-                            area 1
-                        </div>
-                        <div class="row lightBlue">
-                            ares 2
-                        </div>
+                     
                         
                     </div>
                     <div class="col-md-4">
@@ -104,23 +124,19 @@ and open the template in the editor.
                     
                 </div>
             </div>
-            
-            
-            
-            
-            
-            
-            
-            
-            <br>
-            
-            
-            <!-- Below the video content-->
-            <br>
-            
-        </div><!-- video container end -->
-    
+        
+        <br>
+        
         <div class="container">
+                <div class="row  whiteBg">
+                    <div class="quiz" id="quiz"> 
+                        <h4>Quiz</h4>
+                        </div>
+                </div>
+            </div>
+        <br>
+        
+        <div class="container whiteBg">
         <div class="row">
 
                 <div class="col-md-4">
@@ -153,7 +169,8 @@ and open the template in the editor.
                      
                 </div>
                 <div class="col-md-6">
-                    <p>TimeRanges: <span class="viewed"></span></p>
+                    <p>Where they left off: <span class="startpoint"></span></p>
+                    <p>TimeRanges: <span class="viewed"></span></p>                 
                     <div class="progressBar">
                         <div class="timeBar"></div>
                     </div>
