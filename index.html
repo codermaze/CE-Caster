@@ -128,7 +128,7 @@ and open the template in the editor.
                     <h4>Quiz</h4>
                     <h6>You must achieve a 100% mark on the quiz for your continuing education certificate to be generated. </h6>
                         <h6>You can retake the quiz as many times a needed to achieve this score.</h6>
-                        <br>
+                    
                         <button id="btnRetry" class="btn btn-primary" onclick="restart()" >Restart</button>
                         <br>
                 </div>
@@ -142,15 +142,26 @@ and open the template in the editor.
                         
                     </div>
                     
-                    <div class="alert alert-success" id="passed" hidden>
-                        You passed.
+                    <div class="alert" id="passed" hidden>
+                        <h3>You passed.</h3>
                     </div>
-                    <div class="alert alert-danger" id="failed" hidden>
-                        Please Retry.
+                    <div class="alert" id="failed" hidden>
+                        <h3>Please Retry.</h3>
                     </div>
                     
                     
                 </div>
+                <div class="col-md-4">
+                    <div id="getCertificate" hidden>
+                    <h4>Click here to generate your CE certificate.</h4>
+                    <br>
+                    <br>
+                    <button type="button" class="btn btn-lg btn-success" >Generate Certificate</button>
+                    </div>
+                </div>
+                
+                
+                
                 </div>
                 
                 
@@ -211,7 +222,7 @@ and open the template in the editor.
                           <td>Restarts: <span class="restarts"></span></td>
                         </tr>
                         <tr>                         
-                          <td>Restarts: <span class="restarts"></span></td>      
+                            
                         </tr>
                         <tr>
                         
