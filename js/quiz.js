@@ -24,6 +24,7 @@ function renderQuestion(){
                     if(correct == questions.length) {
                     $('#passed').show();
                     $('#failed').hide();
+                    $('#getCertificate').show();
                     return true;
                 }
                 else {  
@@ -67,8 +68,11 @@ function checkAnswer(){
     
   
 function restart() {
+    
     $('#passed').hide();
     $('#failed').hide();
+    restarts++;
+    $('.restarts').text(restarts);
     pos = 0;
     correct = 0; 
     renderQuestion();
