@@ -20,8 +20,10 @@ and open the template in the editor.
 
 
         <link rel="stylesheet" href="css/video-player.css">
+        <link rel="stylesheet" href="css/quiz.css">
         <link rel="stylesheet" href="css/custom.css">
         <script type="text/javascript" src="js/video-player.js"></script>
+        <script type="text/javascript" src="js/quiz.js"></script>
     </head>
 
 
@@ -30,155 +32,207 @@ and open the template in the editor.
         <br>
 
         <div class="container"><!-- Video Container Start -->
-        
-                <div class="row whiteBg">
 
-                    <div class="col-md-8">
-                        <video  width="100%" id="videoPlayer" style="border: 1px solid grey" preload="auto">
-                            <source src='content/insync video 1 retirement goal.mp4' type=video/mp4>
-                            Your browser does not support this video.
-                        </video>
-                        <div class="videoControls">
+            <div class="row whiteBg">
 
-                                    <a href="#" class="btnPlay"><span class="glyphicon glyphicon-play"></span></a>
-                                    <a href="#" class="btnMute"><span class="glyphicon glyphicon-volume-up"></span></a>
-                          
-                                
-                            
-                                    <div class="progressBar">
-                                <div class="timeBar"></div>
-                                </div>
-                              
-                                
-                                
-                               
-                                   <a href="#" class="btnFullscreen"><span class="glyphicon glyphicon-fullscreen"></span></a>
-                                   
-                                <div class="videoTime">
-                                <span class="current">0:00</span> / <span class="duration"></span>
-                                <img src="logo.png">
-                                </div>
-                                   
-                                
-                                </div>
+                <div class="col-md-8">
+                    <video  width="100%" id="videoPlayer" style="border: 1px solid grey" preload="auto">
+                        <source src='content/insync video 1 retirement goal.mp4' type=video/mp4>
+                        Your browser does not support this video.
+                    </video>
+                    <div class="videoControls">
+
+                        <a href="#" class="btnPlay"><span class="glyphicon glyphicon-play"></span></a>
+                        <a href="#" class="btnMute"><span class="glyphicon glyphicon-volume-up"></span></a>
+
+
+
+                        <div class="progressBar">
+                            <div class="timeBar"></div>
+                        </div>
+
+
+
+
+                        <a href="#" class="btnFullscreen"><span class="glyphicon glyphicon-fullscreen"></span></a>
+
+                        <div class="videoTime">
+                            <span class="current">0:00</span> / <span class="duration"></span>
+                            <img src="logo.png">
+                        </div>
+
 
                     </div>
 
-                    <div class="col-md-4">
-                        <div class="whiteBg">
+                </div>
+                <br>
+                <div class="col-md-4">
+                    <div class="whiteBg">
                         <h4><em>Webcast</em> - Video Series</h4>
                         <h6>Presented by: The Host</h6>
                         <br>
                         <h5>Video description title</h5>
                         <h6>Description of video here, along with details about the product being discussed and the presenters.</h6>                    
-                        </div>                     
-                    </div> 
-                    <div class="col-md-4">
-                        <div class="whiteBg">
-                        
+                    </div>                     
+                </div> 
+                <div class="col-md-4">
+                    <div class="whiteBg">
+
                         <div class="">
                             Download Documents
                             <h5>Featured Document: <a href="#">Featured Doc.pdf</a></h5>
                             <h5>Script: <a href="#">Subtitles.pdf</a></h5>
                             <h5>Slides: <a href="#">Presentation.pdf</a></h5>
                         </div>
-                        </div>
-                    </div>            
-                   <div class="col-md-4">
-                        <div class="coolGreyBg">
-                            
-                            <table class="table">
-                                <tr>
-                                    <td>Percent Viewed: <span class="percentCompleted"></span> %</td>
-                                    <td> </td>
-                                    <td><button id="btnQuiz" class="btn btn-primary" disabled>Take the quiz</button></td>
+                    </div>
+                </div>            
+                <div class="col-md-4">
+                    <div class="coolGreyBg">
 
-                                </tr>
-                            </table>
-                            <h6>Quiz will become active when entire video has been viewed.</h6>
-                        </div>
+                        <table class="table">
+                            <tr>
+                                <td>Percent Viewed: <span class="percentCompleted"></span> %</td>
+                                <td> </td>
+                                <td><button id="btnQuiz" class="btn btn-primary" disabled>Take the quiz</button></td>
+
+                            </tr>
+                        </table>
+                        <h6>Quiz will become active when entire video has been viewed.</h6>
                     </div>
-                    
-                    
-                    
-                    
-                    
-                    
                 </div>
-           
-   
+            </div>
             <!-- Below the video content-->
-           
+
         </div><!-- video container end -->
-        
-        
-    <div class="container">
-                <div class="row  whiteBg">
-                    <div class="col-md-8">
-                     
+
+
+        <div class="container">
+            <div class="row  whiteBg">
+                <div class="col-md-8">
+
+
+                </div>
+                <div class="col-md-4">
+
+                </div>
+
+            </div>
+        </div>
+
+        <br>
+
+        <div class="container">
+            <div id ="quizBox" hidden >
+            <div class="row whiteBg">
+                <div class="col-md-2">
+                    <h4>Quiz</h4>
+                    <h6>You must achieve a 100% mark on the quiz for your continuing education certificate to be generated. </h6>
+                        <h6>You can retake the quiz as many times a needed to achieve this score.</h6>
+                        <br>
+                        <button id="btnRetry" class="btn btn-primary" onclick="restart()" >Restart</button>
+                        <br>
+                </div>
+                <div class="col-md-6">
+                    
+                    
+                    <div id="quiz_status" >
                         
                     </div>
-                    <div class="col-md-4">
+                    <div id="quiz">
                         
                     </div>
                     
+                    <div class="alert alert-success" id="passed" hidden>
+                        You passed.
+                    </div>
+                    <div class="alert alert-danger" id="failed" hidden>
+                        Please Retry.
+                    </div>
+                    
+                    
                 </div>
-            </div>
-        
-        <br>
-        
-        <div class="container">
-                <div class="row  whiteBg">
-                    <div class="quiz" id="quiz"> 
-                        <h4>Quiz</h4>
-                        </div>
                 </div>
-            </div>
+                
+                
+                
+                
+                
+        </div>
+        </div>
         <br>
-        
+
         <div class="container whiteBg">
-        <div class="row">
+            <div class="row">
 
                 <div class="col-md-4">
                     <p>Stats:</p>
                     <table class="table table-striped">
                         <tr>
                             <td>Total viewing time: <span class="total">0</span> seconds</td>
-                            
+
                         </tr>
                         <tr>
                             <td>Required Completion: <span class="requireCompleted"></span> seconds</td>
-                            
+
                         </tr>
                         <tr>
                             <td>Percent Needed: <span class="percentViewedNeeded"></span> %</td>
-                            
+
                         </tr>
                         <tr>
                             <td>Completed: <span class="completed"></span></td>
-                            
+
                         </tr>
                         <tr>
                             <td>Percent Complete: <span class="percentCompleted"></span> %</td>
+
+                        </tr>
+                        <tr>
+                            <td>Where they left off: <span class="startpoint"></span></td>
                             
                         </tr>
+                       
                     </table>
-                   
-                  
-                    
-                     
+
+
+
+
                 </div>
                 <div class="col-md-6">
-                    <p>Where they left off: <span class="startpoint"></span></p>
-                    <p>TimeRanges: <span class="viewed"></span></p>                 
-                    <div class="progressBar">
-                        <div class="timeBar"></div>
-                    </div>
+                    <p> Quiz Stats:</p>
+                    <table class="table table-striped">
+                        <tr>
+                            <td>Attempts: <span class="attempts"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Passed the quiz: <span class="pass"></span></td>
+                        </tr>
+                        <tr>
+                          <td>Restarts: <span class="restarts"></span></td>
+                        </tr>
+                        <tr>                         
+                          <td>Restarts: <span class="restarts"></span></td>      
+                        </tr>
+                        <tr>
+                        
+                        </tr>
+                        <tr>
+                            
+                        </tr>
+                       
+                    </table>
                     
+                    
+                    
+                    
+                    <p></p>
+                    <p>TimeRanges: <span class="viewed"></span></p>                 
+
+
                 </div>
             </div>
-      </div>  
-         
+        </div>  
+        <script> window.addEventListener("load", renderQuestion, false);</script>
     </body>
 
 </html>
